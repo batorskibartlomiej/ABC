@@ -17,6 +17,11 @@
 
         public DateTimeOffset? DataZamowienia { get; set; }
 
+        public List<PozycjaZamowienia> pozycjaZamowienias { get; set; }
+        public int KlientId { get; set; }
+        public int AdresDostawyId { get; set; }
+
+
 
 
 

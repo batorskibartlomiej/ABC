@@ -3,7 +3,7 @@
     public class Klient
     {
 
-        public Klient()
+        public Klient(): this(0)
         {
             
         }
@@ -12,7 +12,11 @@
         public Klient(int klientId)
         {
             this.KlientId = klientId;
+            ListaAdresow = new List<Adres> ();
         }
+
+        public List<Adres> ListaAdresow { get; set; }
+        
 
         public static int Licznik { get; set; }
 

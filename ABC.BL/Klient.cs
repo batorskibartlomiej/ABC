@@ -1,6 +1,6 @@
 ﻿namespace ABC.BL
 {
-    public class Klient
+    public class Klient: KlasaBazowa
     {
 
         public Klient(): this(0)
@@ -60,8 +60,10 @@
 
         }
 
+        public int KilentTyp { get; set; }
 
-        public bool Zwaliduj()
+
+        public override bool Zwaliduj()
         {
             var poprawne = true;
             
@@ -82,12 +84,26 @@
         /// Zapisujemy obecnego klienta
         /// </summary>
         /// <returns></returns>
-        public bool Zapisz()
-        {
+        //public bool Zapisz(Klient klient)
+        //{
 
-            return true;
+        //    var sukces = true;
 
-        }
+        //    if (klient.MaZmiany && klient.DaneSaPrawidlowe)
+        //    {
+        //        if (klient.JestNowy)
+        //        {
+        //            //wywolujemy procedure skladowana insert
+        //        }
+        //        else
+        //        {
+        //            //wywolujemy procedure skladowana update
+
+        //        }
+        //    }
+        //    return sukces;
+
+        //}
 
         /// <summary>
         /// PObieramy 1 klienta
@@ -107,6 +123,11 @@
         public List<Klient> Pobierz()
         {
             return new List<Klient>();
+        }
+
+        public override string ToString()
+        {
+            return ImieNazwisko;
         }
 
 

@@ -1,6 +1,6 @@
 ﻿namespace ABC.BL
 {
-    public class Zamowienie
+    public class Zamowienie: KlasaBazowa
     {
         public Zamowienie()
         {
@@ -41,16 +41,30 @@
         /// </summary>
         /// <param name="produktId"></param>
         /// <returns></returns>
-        public bool Zapisz()
+        public bool Zapisz(Zamowienie zamowienie)
         {
-            return true;
+            var sukces = true;
+
+            if (zamowienie.MaZmiany && zamowienie.DaneSaPrawidlowe)
+            {
+                if (zamowienie.JestNowy)
+                {
+                    //wywolujemy procedure skladowana insert
+                }
+                else
+                {
+                    //wywolujemy procedure skladowana update
+
+                }
+            }
+            return sukces;
         }
 
         /// <summary>
         /// Sprawdzamy dane zamowienia
         /// </summary>
         /// <returns></returns>
-        public bool Zwaliduj()
+        public override bool Zwaliduj()
         {
             var poprawne = true;
 
@@ -60,6 +74,11 @@
             }
 
             return poprawne;
+        }
+
+        public override string ToString()
+        {
+            return DataZamowienia.Value.Date + "(" + ZamowienieId + ")";
         }
 
     }

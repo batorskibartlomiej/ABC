@@ -13,10 +13,28 @@
         /// Zapisujemy obecnego klienta
         /// </summary>
         /// <returns></returns>
-        public bool Zapisz()
+        /// <summary>
+        /// Zapisujemy obecnego klienta
+        /// </summary>
+        /// <returns></returns>
+        public bool Zapisz(Klient klient)
         {
 
-            return true;
+            var sukces = true;
+
+            if (klient.MaZmiany && klient.DaneSaPrawidlowe)
+            {
+                if (klient.JestNowy)
+                {
+                    //wywolujemy procedure skladowana insert
+                }
+                else
+                {
+                    //wywolujemy procedure skladowana update
+
+                }
+            }
+            return sukces;
 
         }
 

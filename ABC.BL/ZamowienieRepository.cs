@@ -86,9 +86,28 @@
         /// </summary>
         /// <param name="produktId"></param>
         /// <returns></returns>
-        public bool Zapisz()
+        /// <summary>
+        /// Zapisujemy biezace zamowienie
+        /// </summary>
+        /// <param name="produktId"></param>
+        /// <returns></returns>
+        public bool Zapisz(Zamowienie zamowienie)
         {
-            return true;
+            var sukces = true;
+
+            if (zamowienie.MaZmiany && zamowienie.DaneSaPrawidlowe)
+            {
+                if (zamowienie.JestNowy)
+                {
+                    //wywolujemy procedure skladowana insert
+                }
+                else
+                {
+                    //wywolujemy procedure skladowana update
+
+                }
+            }
+            return sukces;
         }
     }
 }

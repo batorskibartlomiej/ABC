@@ -11,6 +11,9 @@
         public Produkt Pobierz(int produktId)
         {
             Produkt produkt = new Produkt(produktId);
+            Object mojObiekt = new object();
+            Console.WriteLine("Obiekt : "+mojObiekt.ToString());
+            Console.WriteLine("Produkt : " + produkt.ToString());
 
             if (produktId == 2)
             {
@@ -28,9 +31,23 @@
         /// </summary>
         /// <param name="produktId"></param>
         /// <returns></returns>
-        public bool Zapisz()
+        public bool Zapisz(Produkt produkt)
         {
-            return true;
+            var sukces = true;
+
+            if(produkt.MaZmiany && produkt.DaneSaPrawidlowe)
+            {
+                if(produkt.JestNowy)
+                {
+                    //wywolujemy procedure skladowana insert
+                }
+                else
+                {
+                    //wywolujemy procedure skladowana update
+
+                }
+            }
+            return sukces;
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿
 
+using Common;
+
 namespace ABC.BL
 {
     public class Produkt: KlasaBazowa
@@ -19,7 +21,19 @@ namespace ABC.BL
         public Decimal? AktualnaCena { get; set; }
         public string Opis { get; set; }
 
-        public string NazwaProduktu { get; set; }
+        private string _NazwaProduktu;
+
+        public string NazwaProduktu
+        {
+            get {
+
+
+                return _NazwaProduktu.WstawSpacje();
+            
+            }
+            set { _NazwaProduktu = value; }
+        }
+
 
 
         /// <summary>
@@ -65,6 +79,7 @@ namespace ABC.BL
             return NazwaProduktu;
         }
 
+        
 
 
 
